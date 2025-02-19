@@ -1,6 +1,10 @@
 @font-face {
   font-family: 'Sincerely';
-  src: url('../assets/fonts/Sincerely.otf') format('opentype');
+  font-family: 'Sincerely';
+  src: url('../assets/fonts/subset-SincerelyRegular.woff') format('woff'),
+       url('../assets/fonts/subset-SincerelyRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {

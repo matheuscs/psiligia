@@ -5,7 +5,7 @@ export function Home() {
   return(
     <div>
       <div className='header'>
-        <img src="https://github.com/user-attachments/assets/8d65f6c3-dc2c-4293-aba3-d83202f24045" alt="Lígia's Photo" />
+        <img src="https://github.com/user-attachments/assets/803b4721-2430-462b-b269-e76bf77cab30" alt="Lígia's Photo" />
         <p className='name'>Lígia Rangel</p>
         <p className="profession">Psicóloga</p>
         <p className='license'>CRP 06/207405</p>
