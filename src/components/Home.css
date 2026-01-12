@@ -65,7 +65,6 @@ img {
   padding: 1rem 3rem;
   background-color: #b7cbf1;
   min-height: 200px;
-  display: flex;
   justify-content: center;
   align-items: top;
 }
@@ -75,6 +74,11 @@ img {
   text-align: left;
   color: #1d3f80;
   text-align: center;
+  margin: auto;
+}
+.mapa-container {
+  max-width: 600px;
+  margin: auto;
 }
 footer {
   color: #1d3f80;
@@ -108,4 +112,8 @@ footer {
   .introduction {
     padding-left: 0;
   }
+    .mapa-container {
+      max-width: 600px;
+      margin: auto;
+    }
 }
