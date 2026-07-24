@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# Site da Lígia Rangel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institucional da psicóloga Lígia Rangel (Indaiatuba/SP). É um site estático — HTML e CSS puros, sem build, sem framework e sem dependências de JavaScript.
 
-Currently, two official plugins are available:
+## Estrutura
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+public/            → tudo que é servido no site (raiz de hospedagem)
+  index.html        → a página
+  ligia-hero.webp    → foto de capa
+  ligiarangel.png     → imagem usada no og:image (compartilhamento em redes sociais)
+  psi-logo.png/.svg   → favicon
+  fonts/              → Lora e Work Sans (fontes variáveis, auto-hospedadas)
+  robots.txt, sitemap.xml
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+design/            → mockups e versões do design (histórico, não entra no site)
+firebase.json      → configuração de hospedagem do Firebase
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Rodando localmente
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Como não há build nem servidor de desenvolvimento, basta servir a pasta `public/` com qualquer servidor estático — por exemplo, a extensão "Live Server" do VS Code, ou:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```
+npx serve public
+```
+
+Abrir o `public/index.html` direto no navegador (duplo clique) não funciona corretamente, porque as imagens e fontes usam caminhos absolutos (`/ligia-hero.webp`, `/fonts/...`) que só resolvem quando servidos a partir da raiz.
+
+## Publicando
+
+O projeto usa Firebase Hosting, já configurado para publicar o conteúdo de `public/`:
+
+```
+firebase deploy --only hosting
 ```
