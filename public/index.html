@@ -75,26 +75,74 @@
 
       * { -webkit-font-smoothing: antialiased; }
 
+      img, iframe { max-width: 100%; }
+
+      .menu-toggle { display: none; }
+
       @media (max-width: 860px) {
         section { padding-left: 24px !important; padding-right: 24px !important; }
         header { padding-left: 24px !important; padding-right: 24px !important; }
+
+        .menu-toggle { display: block !important; }
+
         header nav { display: none !important; }
+        header nav.mobile-open {
+          display: flex !important;
+          position: fixed;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0 !important;
+          background: oklch(97% 0.012 75);
+          border-bottom: 1px solid oklch(88% 0.015 70);
+          padding: 8px 24px 20px;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+          z-index: 49;
+        }
+        header nav.mobile-open a:not(:last-child) {
+          display: block;
+          width: 100%;
+          padding: 14px 0 !important;
+          border-bottom: 1px solid oklch(90% 0.015 70);
+          font-size: 16px !important;
+        }
+        header nav.mobile-open a:last-child { margin-top: 14px; }
+
         section[style*="grid-template-columns: 0.9fr 1.1fr"],
         section > div[style*="grid-template-columns: 0.9fr 1.1fr"],
         section > div[style*="grid-template-columns: 1fr 1fr"] {
           grid-template-columns: 1fr !important;
         }
+        #hero .hero-image { order: -1; }
+        #hero { padding-top: 96px !important; padding-bottom: 56px !important; gap: 32px !important; }
+
+        section[id="especialidades"] > div[style*="repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        h1 { font-size: 36px !important; }
+        h2 { font-size: 28px !important; }
+      }
+
+      @media (max-width: 600px) {
+        section { padding-left: 16px !important; padding-right: 16px !important; }
+        header { padding-left: 16px !important; padding-right: 16px !important; }
+        #hero { padding-top: 84px !important; gap: 24px !important; }
         section[id="especialidades"] > div[style*="repeat(3, 1fr)"] {
           grid-template-columns: 1fr !important;
         }
-        h1 { font-size: 36px !important; }
+        h1 { font-size: 30px !important; }
+        h2 { font-size: 24px !important; }
+        iframe { height: 260px !important; }
+        #wa-float-btn { width: 48px !important; height: 48px !important; }
+        #wa-float-btn img { width: 24px !important; height: 24px !important; }
       }
     </style>
   </head>
   <body>
 <div style="font-family: 'Work Sans', sans-serif; color: oklch(23% 0.015 60); background: oklch(97% 0.012 75); width: 100%; overflow-x: hidden;">
 
-  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: oklch(97% 0.012 75 / 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid oklch(88% 0.015 70);">
+  <header id="site-header" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: oklch(97% 0.012 75 / 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid oklch(88% 0.015 70);">
     <div style="font-family: 'Lora', serif; font-size: 20px; font-weight: 600; letter-spacing: 0.01em;">Lígia Rangel</div>
     <nav style="display: flex; align-items: center; gap: 32px;">
       <a href="#sobre" style="font-size: 15px; color: oklch(23% 0.015 60);">Sobre</a>
@@ -103,10 +151,11 @@
       <a href="#contato" style="font-size: 15px; color: oklch(23% 0.015 60);">Contato</a>
       <a href="https://wa.me/5519999421996?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="display: flex; align-items: center; padding: 10px 22px; background: oklch(58% 0.09 45); color: oklch(98% 0.01 45); border-radius: 999px; font-size: 14px; font-weight: 500;">Agendar consulta</a>
     </nav>
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" style="background: none; border: none; font-size: 26px; line-height: 1; cursor: pointer; color: oklch(23% 0.015 60); padding: 4px 6px;">☰</button>
   </header>
 
-  <section style="display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 64px; padding: 168px 48px 100px; max-width: 1280px; margin: 0 auto;">
-    <div style="display: flex; flex-direction: column; gap: 24px;">
+  <section id="hero" style="display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 64px; padding: 168px 48px 100px; max-width: 1280px; margin: 0 auto;">
+    <div class="hero-text" style="display: flex; flex-direction: column; gap: 24px;">
       <span style="font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(50% 0.08 45); font-weight: 500;">Psicóloga Clínica</span>
       <h1 style="font-family: 'Lora', serif; font-size: 56px; line-height: 1.08; margin: 0; font-weight: 500; text-wrap: pretty;">Um espaço de escuta para você se encontrar.</h1>
       <p style="font-size: 18px; line-height: 1.6; color: oklch(40% 0.02 60); max-width: 480px; margin: 0; text-wrap: pretty;">Atendimento psicológico para adultos — presencial em Indaiatuba ou online para qualquer lugar do mundo — e para crianças e adolescentes, presencial em Indaiatuba. Um processo terapêutico acolhedor, ético e no seu tempo.</p>
@@ -116,7 +165,7 @@
       </div>
       <span style="font-size: 13px; color: oklch(55% 0.02 60); margin-top: 4px;">CRP 06/207405</span>
     </div>
-    <div style="position: relative; aspect-ratio: 6 / 4; width: 100%;">
+    <div class="hero-image" style="position: relative; aspect-ratio: 6 / 4; width: 100%;">
       <img src="/ligia-hero.webp" alt="Foto de Lígia Rangel" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 28px;" loading="eager" width="1008" height="635" />
       <div style="position: absolute; inset: -16px; border: 1px solid oklch(80% 0.03 45); border-radius: 36px; pointer-events: none; z-index: -1;"></div>
     </div>
@@ -252,6 +301,68 @@
     <span style="font-family: 'Lora', serif; font-size: 16px;">Lígia Rangel</span>
     <span style="font-size: 13px; color: oklch(55% 0.02 60);">Psicóloga Clínica · CRP 06/207405 · Indaiatuba, SP</span>
   </footer>
+
+  <a id="wa-float-btn" href="https://wa.me/5519999421996?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp" style="position: fixed; bottom: 24px; right: 24px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(0,0,0,0.25); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTMuNTE2IDMuNTE2YzQuNjg2LTQuNjg2IDEyLjI4NC00LjY4NiAxNi45NyAwczQuNjg2IDEyLjI4MyAwIDE2Ljk3YTEyIDEyIDAgMCAxLTEzLjc1NCAyLjI5OWwtNS44MTQuNzM1YS4zOTIuMzkyIDAgMCAxLS40MzgtLjQ0bC43NDgtNS43ODhBMTIgMTIgMCAwIDEgMy41MTcgMy41MTd6bTMuNjEgMTcuMDQzLjMuMTU4YTkuODUgOS44NSAwIDAgMCAxMS41MzQtMS43NThjMy44NDMtMy44NDMgMy44NDMtMTAuMDc0IDAtMTMuOTE4cy0xMC4wNzUtMy44NDMtMTMuOTE4IDBhOS44NSA5Ljg1IDAgMCAwLTEuNzQ3IDExLjU1NGwuMTYuMzAzLS41MSAzLjk0MmEuMTk2LjE5NiAwIDAgMCAuMjE5LjIyem02LjUzNC03LjAwMy0uOTMzIDEuMTY0YTkuODQgOS44NCAwIDAgMS0zLjQ5Ny0zLjQ5NWwxLjE2Ni0uOTMzYS43OS43OSAwIDAgMCAuMjMtLjk0TDkuNTYxIDYuOTZhLjc5Ljc5IDAgMCAwLS45MjQtLjQ0NWwtMi4wMjMuNTI0YS43OTcuNzk3IDAgMCAwLS41ODguODggMTEuNzU0IDExLjc1NCAwIDAgMCAxMC4wMDUgMTAuMDA1Ljc5Ny43OTcgMCAwIDAgLjg4LS41ODdsLjUyNS0yLjAyM2EuNzkuNzkgMCAwIDAtLjQ0NS0uOTIzTDE0LjYgMTMuMzI3YS43OS43OSAwIDAgMCAuOTQuMjN6Jy8+PC9zdmc+" alt="" width="30" height="30">
+  </a>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('wa-float-btn');
+      var footer = document.querySelector('footer');
+      var margin = 24; // distância desejada do botão até a borda/rodapé
+      if (!btn || !footer) return;
+
+      function updatePosition() {
+        var footerRect = footer.getBoundingClientRect();
+        var distanceFromViewportBottom = window.innerHeight - footerRect.top;
+        if (distanceFromViewportBottom > margin) {
+          btn.style.bottom = (distanceFromViewportBottom + margin) + 'px';
+        } else {
+          btn.style.bottom = margin + 'px';
+        }
+      }
+
+      window.addEventListener('scroll', updatePosition, { passive: true });
+      window.addEventListener('resize', updatePosition);
+      updatePosition();
+    })();
+
+    (function () {
+      var toggle = document.getElementById('menu-toggle');
+      var nav = document.querySelector('header nav');
+      var header = document.getElementById('site-header');
+      if (!toggle || !nav || !header) return;
+
+      function closeMenu() {
+        nav.classList.remove('mobile-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      }
+      function openMenu() {
+        nav.style.top = header.offsetHeight + 'px';
+        nav.classList.add('mobile-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.textContent = '✕';
+      }
+
+      toggle.addEventListener('click', function () {
+        if (nav.classList.contains('mobile-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      Array.prototype.forEach.call(nav.querySelectorAll('a'), function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 860) closeMenu();
+      });
+    })();
+  </script>
 
 </div>
   </body>
