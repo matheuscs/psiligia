@@ -13,20 +13,17 @@
       gtag('config', 'G-6Z76LM9NQ1');
     </script>
 
-    <!-- Event snippet for WhatasApp conversion page -->
+    <!-- Event snippet for WhatsApp conversion page -->
     <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.open(url, '_blank');
+      function gtag_report_conversion(url) {
+        if (typeof (gtag) === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-16566235584/LYWVCJq-39wcEMDjsts9',
+            'transport_type': 'beacon'
+          });
         }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-16566235584/LYWVCJq-39wcEMDjsts9',
-          'event_callback': callback
-      });
-      return false;
-    }
+        return true; // Permite que o link <a> abra nativamente sem dependência do callback
+      }
     </script>
 
     <link rel="icon" type="image/png" href="/psi-logo.png" />
@@ -209,7 +206,7 @@
 
   <section id="especialidades" style="padding: 100px 48px; max-width: 1280px; margin: 0 auto;">
     <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 56px; max-width: 640px;">
-      
+
       <h2 style="font-family: 'Lora', serif; font-size: 36px; font-weight: 500; margin: 0; text-wrap: pretty;">Áreas de atuação</h2>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
