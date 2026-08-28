@@ -26,3 +26,9 @@ dist-ssr
 # Firebase stuff
 .firebase/
 .firebaserc
+
+# documentacao
+doc/
+
+# instrucoes locais do projeto (nao versionar)
+CLAUDE.md
