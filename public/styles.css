@@ -400,3 +400,46 @@ a.post-card:hover {
   .post-card p { font-size: 14px; margin-bottom: 10px; }
   .post-meta { margin-bottom: 10px; }
 }
+
+/* Hero da presencial: lado a lado no desktop, foto entre paragrafo e botao no mobile */
+.hero-presencial {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  column-gap: 56px;
+  row-gap: 22px;
+  align-items: start;
+  grid-template-areas:
+    "bnav   bphoto"
+    "blabel bphoto"
+    "btitle bphoto"
+    "btext  bphoto"
+    "bcta   bphoto"
+    "bsig   bphoto";
+}
+.hero-presencial > nav { grid-area: bnav; }
+.hero-presencial > .hp-label { grid-area: blabel; }
+.hero-presencial > h1 { grid-area: btitle; }
+.hero-presencial > p { grid-area: btext; }
+.hero-presencial > .hp-cta { grid-area: bcta; }
+.hero-presencial > .hp-sig { grid-area: bsig; align-self: start; }
+.hero-presencial > .hero-image { grid-area: bphoto; align-self: center; }
+
+@media (max-width: 860px) {
+  .hero-presencial {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    grid-template-areas:
+      "bnav"
+      "blabel"
+      "btitle"
+      "btext"
+      "bphoto"
+      "bcta"
+      "bsig";
+  }
+}
+
+/* Hero da infantil: no mobile, ilustracao menos quadrada para nao dominar a tela */
+@media (max-width: 860px) {
+  .infantil-photo { aspect-ratio: 4 / 3 !important; }
+}
