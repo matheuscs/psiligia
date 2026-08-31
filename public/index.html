@@ -44,126 +44,7 @@
     <meta name="twitter:title" content="Lígia Rangel - Psicóloga">
     <meta name="twitter:description" content="Atendimento psicológico em Indaiatuba e Online.">
 
-    <style>
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/57d31c04-496f-4b25-90b8-b133669d252f.woff2") format('woff2');
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/57d31c04-496f-4b25-90b8-b133669d252f.woff2") format('woff2');
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/57d31c04-496f-4b25-90b8-b133669d252f.woff2") format('woff2');
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/20325587-3b5f-4669-9929-08863337a600.woff2") format('woff2');
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/20325587-3b5f-4669-9929-08863337a600.woff2") format('woff2');
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/20325587-3b5f-4669-9929-08863337a600.woff2") format('woff2');
-}
-
-      body { margin: 0; background: oklch(97% 0.012 75); }
-      a { color: oklch(45% 0.1 45); text-decoration: none; }
-      a:hover { color: oklch(38% 0.1 45); }
-      * { box-sizing: border-box; }
-
-      * { -webkit-font-smoothing: antialiased; }
-
-      img, iframe { max-width: 100%; }
-
-      .menu-toggle { display: none; }
-
-      @media (max-width: 860px) {
-        section { padding-left: 24px !important; padding-right: 24px !important; }
-        header { padding-left: 24px !important; padding-right: 24px !important; }
-
-        .menu-toggle { display: block !important; }
-
-        header nav { display: none !important; }
-        header nav.mobile-open {
-          display: flex !important;
-          position: fixed;
-          left: 0;
-          right: 0;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0 !important;
-          background: oklch(97% 0.012 75);
-          border-bottom: 1px solid oklch(88% 0.015 70);
-          padding: 8px 24px 20px;
-          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-          z-index: 49;
-        }
-        header nav.mobile-open a:not(:last-child) {
-          display: block;
-          width: 100%;
-          padding: 14px 0 !important;
-          border-bottom: 1px solid oklch(90% 0.015 70);
-          font-size: 16px !important;
-        }
-        header nav.mobile-open a:last-child { margin-top: 14px; }
-
-        section[style*="grid-template-columns: 0.9fr 1.1fr"],
-        section > div[style*="grid-template-columns: 0.9fr 1.1fr"],
-        section > div[style*="grid-template-columns: 1fr 1fr"] {
-          grid-template-columns: 1fr !important;
-        }
-        #hero .hero-image { order: -1; }
-        #hero { padding-top: 96px !important; padding-bottom: 56px !important; gap: 32px !important; }
-
-        section[id="especialidades"] > div[style*="repeat(3, 1fr)"] {
-          grid-template-columns: repeat(2, 1fr) !important;
-        }
-        h1 { font-size: 36px !important; }
-        h2 { font-size: 28px !important; }
-      }
-
-      @media (max-width: 600px) {
-        section { padding-left: 16px !important; padding-right: 16px !important; }
-        header { padding-left: 16px !important; padding-right: 16px !important; }
-        #hero { padding-top: 84px !important; gap: 24px !important; }
-        section[id="especialidades"] > div[style*="repeat(3, 1fr)"] {
-          grid-template-columns: 1fr !important;
-        }
-        h1 { font-size: 30px !important; }
-        h2 { font-size: 24px !important; }
-        iframe { height: 260px !important; }
-        #wa-float-btn { width: 48px !important; height: 48px !important; }
-        #wa-float-btn img { width: 24px !important; height: 24px !important; }
-      }
-    </style>
+    <link rel="stylesheet" href="/styles.css" />
 
     <script type="application/ld+json">
     {
@@ -239,7 +120,14 @@
     <nav style="display: flex; align-items: center; gap: 32px;">
       <a href="#sobre" style="font-size: 15px; color: oklch(23% 0.015 60);">Sobre</a>
       <a href="#especialidades" style="font-size: 15px; color: oklch(23% 0.015 60);">Especialidades</a>
-      <a href="#atendimento" style="font-size: 15px; color: oklch(23% 0.015 60);">Atendimento</a>
+      <div class="has-sub">
+        <a href="#atendimento" style="font-size: 15px; color: oklch(23% 0.015 60);">Atendimento <span class="caret">&#9660;</span></a>
+        <div class="submenu">
+          <a href="/psicologa-indaiatuba/">Presencial em Indaiatuba</a>
+          <a href="/psicologa-online/">Atendimento online</a>
+          <a href="/psicologa-infantil-indaiatuba/">Crianças e adolescentes</a>
+        </div>
+      </div>
       <a href="#contato" style="font-size: 15px; color: oklch(23% 0.015 60);">Contato</a>
       <a href="https://wa.me/5519999421996?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." onclick="return gtag_report_conversion(this.href);" target="_blank" style="display: flex; align-items: center; padding: 10px 22px; background: oklch(58% 0.09 45); color: oklch(98% 0.01 45); border-radius: 999px; font-size: 14px; font-weight: 500;">Agendar consulta</a>
     </nav>
@@ -250,7 +138,7 @@
     <div class="hero-text" style="display: flex; flex-direction: column; gap: 24px;">
       <span style="font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(50% 0.08 45); font-weight: 500;">Psicóloga Clínica</span>
       <h1 style="font-family: 'Lora', serif; font-size: 56px; line-height: 1.08; margin: 0; font-weight: 500; text-wrap: pretty;">Um espaço de escuta para você se encontrar.</h1>
-      <p style="font-size: 18px; line-height: 1.6; color: oklch(40% 0.02 60); max-width: 480px; margin: 0; text-wrap: pretty;">Atendimento psicológico para adultos — presencial em Indaiatuba ou online para qualquer lugar do mundo — e para crianças e adolescentes, presencial em Indaiatuba. Um processo terapêutico acolhedor, ético e no seu tempo.</p>
+      <p style="font-size: 18px; line-height: 1.6; color: oklch(40% 0.02 60); max-width: 480px; margin: 0; text-wrap: pretty;">Atendimento psicológico para adultos, presencial em Indaiatuba ou online para qualquer lugar do mundo, e para crianças e adolescentes, presencial em Indaiatuba. Um processo terapêutico acolhedor, ético e no seu tempo.</p>
       <div style="display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap;">
         <a href="https://wa.me/5519999421996?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." onclick="return gtag_report_conversion(this.href);" target="_blank" style="padding: 15px 28px; background: oklch(58% 0.09 45); color: oklch(98% 0.01 45); border-radius: 999px; font-size: 15px; font-weight: 500;">Marcar horário no WhatsApp</a>
         <a href="https://instagram.com/psi.ligiarangel" target="_blank" style="padding: 15px 28px; border: 1px solid oklch(70% 0.02 60); border-radius: 999px; font-size: 15px; font-weight: 500; color: oklch(23% 0.015 60);">@psi.ligiarangel</a>
@@ -267,8 +155,8 @@
     <div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px;">
       <span style="font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(50% 0.08 45); font-weight: 500;">Sobre</span>
       <h2 style="font-family: 'Lora', serif; font-size: 36px; font-weight: 500; margin: 0; text-wrap: pretty;">Terapia como cuidado, não como fórmula.</h2>
-      <p style="font-size: 17px; line-height: 1.75; color: oklch(35% 0.02 60); margin: 0; text-wrap: pretty;">Sou Lígia Rangel, psicóloga clínica (CRP 06/207405), e acredito que cada pessoa chega à terapia com uma história única — por isso não trabalho com respostas prontas. Meu compromisso é construir, junto com você, um espaço de confiança onde é possível olhar para as próprias questões com mais clareza, acolhimento e sem julgamento.</p>
-      <p style="font-size: 17px; line-height: 1.75; color: oklch(35% 0.02 60); margin: 0; text-wrap: pretty;">Atendo adultos que buscam entender melhor seus sentimentos, padrões de comportamento e relações, com acompanhamento contínuo, ético e sigiloso — presencial em Indaiatuba ou online, para qualquer lugar do mundo. Também atendo crianças e adolescentes, sempre presencialmente em Indaiatuba.</p>
+      <p style="font-size: 17px; line-height: 1.75; color: oklch(35% 0.02 60); margin: 0; text-wrap: pretty;">Sou Lígia Rangel, psicóloga clínica (CRP 06/207405), e acredito que cada pessoa chega à terapia com uma história única, por isso não trabalho com respostas prontas. Meu compromisso é construir, junto com você, um espaço de confiança onde é possível olhar para as próprias questões com mais clareza, acolhimento e sem julgamento.</p>
+      <p style="font-size: 17px; line-height: 1.75; color: oklch(35% 0.02 60); margin: 0; text-wrap: pretty;">Atendo adultos que buscam entender melhor seus sentimentos, padrões de comportamento e relações, com acompanhamento contínuo, ético e sigiloso, presencial em Indaiatuba ou online, para qualquer lugar do mundo. Também atendo crianças e adolescentes, sempre presencialmente em Indaiatuba.</p>
     </div>
   </section>
 
@@ -296,7 +184,7 @@
       <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px; background: oklch(99% 0.008 75); border: 1px solid oklch(90% 0.015 70); border-radius: 4px;">
         <div style="width: 40px; height: 40px; border-radius: 50%; background: oklch(58% 0.09 150 / 0.16);"></div>
         <h3 style="font-family: 'Lora', serif; font-size: 20px; font-weight: 500; margin: 0;">Relacionamentos</h3>
-        <p style="font-size: 15px; line-height: 1.6; color: oklch(40% 0.02 60); margin: 0;">Questões afetivas, familiares e de convívio social — padrões e formas de se relacionar.</p>
+        <p style="font-size: 15px; line-height: 1.6; color: oklch(40% 0.02 60); margin: 0;">Questões afetivas, familiares e de convívio social. Padrões e formas de se relacionar.</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px; background: oklch(99% 0.008 75); border: 1px solid oklch(90% 0.015 70); border-radius: 4px;">
         <div style="width: 40px; height: 40px; border-radius: 50%; background: oklch(58% 0.09 45 / 0.14);"></div>
@@ -306,7 +194,7 @@
       <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px; background: oklch(99% 0.008 75); border: 1px solid oklch(90% 0.015 70); border-radius: 4px;">
         <div style="width: 40px; height: 40px; border-radius: 50%; background: oklch(58% 0.09 150 / 0.16);"></div>
         <h3 style="font-family: 'Lora', serif; font-size: 20px; font-weight: 500; margin: 0;">Transições de vida</h3>
-        <p style="font-size: 15px; line-height: 1.6; color: oklch(40% 0.02 60); margin: 0;">Mudanças significativas — carreira, mudança de cidade, novas fases da vida adulta.</p>
+        <p style="font-size: 15px; line-height: 1.6; color: oklch(40% 0.02 60); margin: 0;">Mudanças significativas, como carreira, mudança de cidade, novas fases da vida adulta.</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px; background: oklch(99% 0.008 75); border: 1px solid oklch(90% 0.015 70); border-radius: 4px;">
         <div style="width: 40px; height: 40px; border-radius: 50%; background: oklch(58% 0.09 45 / 0.14);"></div>
@@ -356,6 +244,27 @@
           </div>
         </div>
       </div>
+      <div style="grid-column: 1 / -1; margin-top: 16px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;" class="two-col">
+        <a href="/psicologa-indaiatuba/" style="display: flex; flex-direction: column; gap: 8px; padding: 24px 28px; background: oklch(99% 0.008 75); border: 1px solid oklch(90% 0.015 70); border-radius: 4px; color: inherit;">
+          <span style="font-family: 'Lora', serif; font-size: 18px; font-weight: 500; color: oklch(45% 0.1 45);">Presencial em Indaiatuba &rsaquo;</span>
+          <span style="font-size: 15px; line-height: 1.55; color: oklch(40% 0.02 60);">Consultório no Cidade Nova I, com endereço, mapa e contato direto.</span>
+        </a>
+        <a href="/psicologa-online/" style="display: flex; flex-direction: column; gap: 8px; padding: 24px 28px; background: oklch(99% 0.008 75); border: 1px solid oklch(90% 0.015 70); border-radius: 4px; color: inherit;">
+          <span style="font-family: 'Lora', serif; font-size: 18px; font-weight: 500; color: oklch(45% 0.1 45);">Atendimento online &rsaquo;</span>
+          <span style="font-size: 15px; line-height: 1.55; color: oklch(40% 0.02 60);">Como funcionam as sessões por videochamada, para adultos, de qualquer lugar do mundo.</span>
+        </a>
+      </div>
+      <div style="grid-column: 1 / -1; margin-top: 40px; padding-top: 40px; border-top: 1px solid oklch(88% 0.015 70); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;" class="two-col">
+        <div>
+          <span style="font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(50% 0.08 45); font-weight: 500;">Crianças e adolescentes</span>
+          <h3 style="font-family: 'Lora', serif; font-size: 26px; font-weight: 500; margin: 12px 0 0; text-wrap: pretty;">Com os pequenos, o encontro é sempre presencial.</h3>
+          <p style="font-size: 16px; line-height: 1.7; color: oklch(40% 0.02 60); margin: 12px 0 0;">Boa parte do trabalho com criança passa pelo brincar, pelo corpo e pelo uso do espaço, coisas que a tela não sustenta. Por isso atendo crianças e adolescentes apenas no consultório, em Indaiatuba, com encontros de orientação aos pais ao longo do processo.</p>
+        </div>
+        <a href="/psicologa-infantil-indaiatuba/" style="display: flex; flex-direction: column; gap: 8px; padding: 24px 28px; background: oklch(99% 0.008 75); border: 1px solid oklch(90% 0.015 70); border-radius: 4px; color: inherit;">
+          <span style="font-family: 'Lora', serif; font-size: 18px; font-weight: 500; color: oklch(45% 0.1 45);">Atendimento infantil &rsaquo;</span>
+          <span style="font-size: 15px; line-height: 1.55; color: oklch(40% 0.02 60);">Quando procurar, como funciona o processo e o que os pais ficam sabendo.</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -370,7 +279,7 @@
       <div style="display: flex; flex-direction: column; gap: 20px; padding: 40px; background: oklch(94% 0.018 70); border-radius: 4px;">
         <div>
           <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: oklch(50% 0.02 60);">Endereço</span>
-          <p style="margin: 6px 0 0; font-size: 16px; line-height: 1.5;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Psic%C3%B3loga+L%C3%ADgia+Rangel+Av.+Dr.+J%C3%A1como+Naz%C3%A1rio+Cidade+Nova+I+Indaiatuba+SP" target="_blank">Av. Dr. Jácomo Nazário — Cidade Nova I, Indaiatuba - SP, 13334-040</a></p>
+          <p style="margin: 6px 0 0; font-size: 16px; line-height: 1.5;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Psic%C3%B3loga+L%C3%ADgia+Rangel+Av.+Dr.+J%C3%A1como+Naz%C3%A1rio+Cidade+Nova+I+Indaiatuba+SP" target="_blank">Av. Dr. Jácomo Nazário, Cidade Nova I, Indaiatuba - SP, 13334-040</a></p>
         </div>
         <div>
           <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: oklch(50% 0.02 60);">Instagram</span>
