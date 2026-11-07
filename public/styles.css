@@ -486,3 +486,34 @@ a.post-card:hover {
       "bsig";
   }
 }
+
+/* Blog: artigo */
+.article { max-width: 720px; margin: 0 auto; }
+.article h2 { font-family: 'Lora', serif; font-size: 30px; line-height: 1.25; font-weight: 500; margin: 52px 0 18px; text-wrap: pretty; }
+.article h3 { font-family: 'Lora', serif; font-size: 20px; font-weight: 500; margin: 32px 0 10px; }
+.article ul, .article ol { margin: 0 0 22px; padding-left: 24px; color: oklch(35% 0.02 60); }
+.article li { font-size: 17px; line-height: 1.7; margin-bottom: 10px; text-wrap: pretty; }
+.article li::marker { color: oklch(58% 0.09 45); }
+.article p a, .article li a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: oklch(75% 0.05 45); }
+.article blockquote {
+  margin: 36px 0;
+  padding: 6px 0 6px 24px;
+  border-left: 3px solid oklch(72% 0.05 45);
+  font-family: 'Lora', serif;
+  font-size: 23px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: oklch(31% 0.03 55);
+  text-wrap: pretty;
+}
+.article .faq-item p { font-size: 16px; }
+.article-help { margin: 28px 0; padding: 20px 24px; background: oklch(94% 0.018 70); border-radius: 4px; font-size: 16px !important; }
+.article-author { display: flex; flex-direction: column; gap: 6px; margin-top: 48px; padding-top: 28px; border-top: 1px solid oklch(88% 0.015 70); }
+.article-author b { font-family: 'Lora', serif; font-size: 18px; font-weight: 500; }
+.article-author span { font-size: 15px; line-height: 1.6; color: oklch(45% 0.02 60); }
+
+@media (max-width: 600px) {
+  .article h2 { font-size: 24px !important; margin-top: 40px; }
+  .article li { font-size: 16px; }
+  .article blockquote { font-size: 20px; padding-left: 18px; }
+}
